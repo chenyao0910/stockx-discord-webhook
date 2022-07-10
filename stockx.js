@@ -110,7 +110,7 @@ client.on("messageCreate", async message => {
             descirption = res.body.Products[0].shortDescription.toString()
         }
     
-        response = got.post('https://stockx.com/p/e', {
+        response = got.post('https://stockx.com/api/p/e', {
             responseType: 'json',
             headers: {
                 "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
