@@ -1,18 +1,12 @@
 const got = require('got')
 var tunnel = require('tunnel');
-const {
-    CookieJar
-} = require('tough-cookie');
 const Discord = require("discord.js");
 const intents = new Discord.Intents(32767);
 const client = new Discord.Client({
     intents
 });
 const {
-    MessageActionRow,
-    MessageButton,
     MessageEmbed,
-    Formatters
 } = require('discord.js');
 const url = 'https://stockx.com/api/browse?&_search=';
 const serverId ="fill your serverID";
@@ -37,26 +31,8 @@ var urlkey;
 var catgory;
 var descirption;
 client.on("messageCreate", async message => {
-    /*
-    if (message.content.startsWith('!checkmemberIDs')) {
-        var temp = ['0'];
-        const server = client.guilds.cache.get(`${serverId}`)
-        var log = message.content.slice(15).trim().split(' ')
-        server.members.cache.each(member => {
-            temp.push(member.user.id)
-          });
-        console.log(temp.length)
-        message.reply("These IDs are not members")
-        for(var i = 0 ; i < log.length;i++){      
-            if(temp.includes(log[i]) == false){
-                message.channel.send(log[i])
-            }      
-        }
-    }
-    */
     if (message.content.startsWith("!sku")) {
-        //let Proxies = fs.readFileSync('proxies.txt', 'utf8').toString().split(':');
-        //let len = Proxies.length;
+
         const args = message.content.slice(4).trim().split(' ');
         let kw = "";
         for (var i = 0; i < args.length; i++) {
@@ -176,8 +152,6 @@ client.on("messageCreate", async message => {
                     .addField("Highest Bid", `$${highestBid} USD`, true)
                     .addField("Lowest Ask", `$${lowestAsk} USD`, true)
                     .addField("Release Date", ` ${releaseDate}`)
-                    //.addField("Size", '```' + sizeinfo.map(x => x.size).join("\n") + '```', true)
-                    //.addField("Lowest Ask", '```' + sizeinfo.map(u => u.price + "|(" + ((parseInt(u.price) - retailPrice) / retailPrice * 100).toFixed(0) + "%)").join("\n") + '```', true)
                     .setThumbnail(image)
                     .setTimestamp()
                     .setFooter('');
