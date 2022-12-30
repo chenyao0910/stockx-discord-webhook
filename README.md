@@ -6,7 +6,7 @@ You can simply deploy this discord bot in your server
 
 It can save you lots of time to search the resell price of the shoe.
 
-Just simply type the command `!sku {keyword or SKU}
+Just simply type the command `!sku {keyword or SKU}`
 
 Feel free to contact me if you discover any issues, and any pull requests are welcome.
 
